@@ -14,7 +14,7 @@ Fine-tuning BERT with LoRA for sentiment analysis on IMDb movie reviews.
 
 ### LoRA 配置详情
 本项目使用Hugging Face PEFT库实现LoRA，关键配置如下：
-'''python
+~~~python
 lora_config = LoraConfig(
 r=8,
 lora_alpha=32,
@@ -23,7 +23,7 @@ lora_dropout=0.05,
 bias="none",
 task_type="SEQ_CLS",
 )
-'''
+~~~
 
 ### 数据处理流程
 1. **分词**: 使用BERT对应的tokenizer，最大长度设置为256。
@@ -54,12 +54,13 @@ task_type="SEQ_CLS",
 ### 如何复现
 安装好相应依赖运行即可
 
-##
+## 项目结构
+~~~bash
 bert-lora-imdb/
 ├── README.md          # 说明文档
 ├── SFTimdb.ipynb      # 项目代码文件
 ├── imdbBERT/checkpoint-700/  #  LoRA 文件
-
+~~~
 ## 致谢
 - 感谢Hugging Face提供Transformers和PEFT库。
 - 感谢IMDb数据集的提供者。
